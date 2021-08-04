@@ -5,24 +5,26 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class AttachmentContent {
-
+public class OutputProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private byte[] bytes;
+    @ManyToOne
+    private Product product;
+    
+    private Double amount;
+    
+    private  Double price;
 
-    @OneToOne
-    Attachment attachment;
+    @ManyToOne
+    private Output output;
 
-    public AttachmentContent(byte[] bytes, Attachment attachment) {
-        this.bytes = bytes;
-        this.attachment = attachment;
-    }
+    
 }
