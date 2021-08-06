@@ -21,4 +21,16 @@ public class Product extends AbsEntity {
     @ManyToOne
     Measurement measurement;
 
+    public Product(Integer id, String name, boolean active, Category category, Attachment photo, Measurement measurement) {
+        super(id, name, active);
+        this.category = category;
+        this.photo = photo;
+        this.measurement = measurement;
+    }
+
+    public Product(Category category, Attachment photo, Measurement measurement) {
+        this.category = category;
+        this.photo = photo;
+        this.measurement = measurement;
+    }
 }
