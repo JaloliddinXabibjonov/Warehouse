@@ -76,7 +76,7 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-                                                            //GET PRODUCT BY ID
+    //GET PRODUCT BY ID
     public Result getById(Integer id){
         Optional<Product> optionalProduct = productRepository.findById(id);
         if (!optionalProduct.isPresent())
@@ -84,7 +84,7 @@ public class ProductService {
         return new Result("Muvaffaqiyatli bajarildi", true,optionalProduct.get());
     }
 
-                                                            //UPDATE PRODUCT
+    //UPDATE PRODUCT
     public Result edit(Integer id, ProductDto productDto){
         Optional<Product> optionalProduct = productRepository.findById(id);
         if(!optionalProduct.isPresent())
@@ -125,7 +125,7 @@ public class ProductService {
         return new Result("Muvaffaqiyatli saqlandi", true);
     }
 
-                                                            //DELETE
+    //DELETE
     public Result delete(Integer id){
         Optional<Product> optionalProduct = productRepository.findById(id);
         if (!optionalProduct.isPresent())

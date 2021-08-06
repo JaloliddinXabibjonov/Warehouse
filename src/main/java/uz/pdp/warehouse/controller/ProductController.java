@@ -29,6 +29,12 @@ public class ProductController {
         return productService.getAll();
     }
 
+    //GET BY ID
+    @GetMapping("/{id}")
+    public Result getOne(@PathVariable Integer id){
+        return productService.getById(id);
+    }
+
     //UPDATE
     @PutMapping("/{id}")
     public Result edit(@PathVariable Integer id, @RequestBody ProductDto productDto){

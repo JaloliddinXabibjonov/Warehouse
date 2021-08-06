@@ -4,4 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import uz.pdp.warehouse.entity.Currency;
 
 public interface CurrencyRepository extends JpaRepository<Currency, Integer> {
+    boolean existsCurrencyByName(String name);
+    Currency findAllByName(String name);
 }
