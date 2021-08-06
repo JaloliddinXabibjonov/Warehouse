@@ -29,4 +29,5 @@ public class User {
 
     @ManyToMany
     Set<Warehouse> warehouses;
+
 }
