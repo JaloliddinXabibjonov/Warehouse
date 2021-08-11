@@ -28,6 +28,14 @@ public class MeasurementService {
     public List<Measurement> getMeasurementService(){
         return measurementRepository.findAll();
     }
+
+    //GET ONE BY ID
+    public  Result getByIdService(Integer id){
+        Optional<Measurement> optionalMeasurement = measurementRepository.findById(id);
+        if (!optionalMeasurement.isPresent())
+            return new Result("Bunday o`lchov birligi topilmadi", false);
+        return new Result("Muvaffaqiyatli bajarildi", true, optionalMeasurement.get())
+    }
                     //UPDATE
     public Result editMeasurementService(Integer id, Measurement measurement){
         Optional<Measurement> optionalMeasurement = measurementRepository.findById(id);

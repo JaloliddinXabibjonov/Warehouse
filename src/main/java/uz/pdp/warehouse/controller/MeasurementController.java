@@ -24,6 +24,10 @@ public class MeasurementController {
     public List<Measurement> getMeasurement(){
         return  measurementService.getMeasurementService();
     }
+    @GetMapping("/{id}")
+    public Result getById(@PathVariable Integer id){
+        return measurementService.getByIdService(id);
+    }
     @PutMapping("/{id}")
     public Result editMeasurement(@PathVariable Integer id, @RequestBody Measurement measurement){
         return measurementService.editMeasurementService(id, measurement);
