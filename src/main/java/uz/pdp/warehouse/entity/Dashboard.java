@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class Dashboard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id''
+    private Integer id;
 
     private String productName;
     private double amount;
