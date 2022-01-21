@@ -16,13 +16,13 @@ public class CategoryController {
     CategoryService categoryService;
 
     //CREATE
-    @PostMapping
+    @PostMapping("/add")
     public Result addCategory(@RequestBody CategoryDto categoryDto){
         return categoryService.addCategoryService(categoryDto);
     }
 
     //READ
-    @GetMapping
+    @GetMapping("/getAll")
     public List<Category>  getCategory(){
         return categoryService.getCategoryService();
     }
