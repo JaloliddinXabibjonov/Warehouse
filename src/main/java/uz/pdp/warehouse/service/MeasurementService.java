@@ -34,7 +34,7 @@ public class MeasurementService {
         Optional<Measurement> optionalMeasurement = measurementRepository.findById(id);
         if (!optionalMeasurement.isPresent())
             return new Result("Bunday o`lchov birligi topilmadi", false);
-        return new Result("Muvaffaqiyatli bajarildi", true, optionalMeasurement.get())
+        return new Result("Muvaffaqiyatli bajarildi", true, optionalMeasurement.get());
     }
                     //UPDATE
     public Result editMeasurementService(Integer id, Measurement measurement){
